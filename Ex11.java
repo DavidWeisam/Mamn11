@@ -1,6 +1,15 @@
+/**
+ * This class represents a Mamn11
+ * @author David Weisman
+ * @version 29-04-2023
+ */
 public class Ex11
 {
-   
+    /**
+    * Finds the shortest path from the start point to the end point with one possibility of crossing to the other road
+    * @param raod1 the first raod
+    * @param raod2 the second raod
+    */
     public static int shortestRoad (int [] road1, int [] road2)
     {
         
@@ -37,7 +46,10 @@ public class Ex11
         return min;
     }
     
-    // Function that builds the arrays of the amount fo time from each point on each road to its end without crossing the second road.
+    /**
+    * Function for shortestRoad that builds the arrays of the amount fo time from each point on each road to its end without crossing the second road.
+    * @param raod 
+    */
     public static int[] BuildingArrToEnd(int[] road)
     {
         int lenOfArrys = road.length; 
@@ -51,7 +63,11 @@ public class Ex11
         return arr;
     }
     
-    // Function that builds the arrays of the amount of time from the beginning of one of the road and across to the second road from any point on the first road to the end of the second road.
+    /**
+     * Function for shortestRoad that builds the arrays of the amount of time from the beginning of one of the road and across to the second road from any point on the first road to the end of the second road.
+     * @param raod1
+     * @param raod2
+     */
     public static int[] BuildingArrWithAcross(int[] road1, int[] road2)
     {
         int lenOfArrys = road1.length;
@@ -65,7 +81,10 @@ public class Ex11
         return arr;
     }
     
-     // Function that finds the shortest time from arrays
+    /**
+     * Function for shortestRoad that finds the shortest time from arrays
+     * @param arr
+     */
     public static int MinOfArr(int[] arr)
     {
         int lenOfArrys = arr.length;
@@ -80,6 +99,10 @@ public class Ex11
         return min;
     }
     
+    /**
+     * Finds the missing number in an invoice series
+     * @param arr the invoice series
+     */
     public static int missingValue (int [] arr)
     {
         //Finding the missing number in an array of 2
