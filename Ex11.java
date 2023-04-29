@@ -1,34 +1,6 @@
-public class First
+public class Ex11
 {
-    // It is not somthing of the code it is only Checking if the code works. 
-    public static void main(String[] args)
-    {
-        int[] arr1 = new int[]{5, 4, 5, 8, 12, 9, 9, 3};
-        int[] arr2 = new int[]{7, 3, 3, 12, 10, 2, 10, 7}; // The answer is 49
-        
-        int[] arr3 = new int[]{4, 5, 2, 8};
-        int[] arr4 = new int[]{2, 6, 3, 9}; // The answer is 17
-        
-        int[] arr5 = new int[]{2, 6, 3, 9};
-        int[] arr6 = new int[]{2, 6, 3, 9}; // The answer is 20
-        
-        int[] arr7 = new int[]{2, 2, 2, 2};
-        int[] arr8 = new int[]{3, 3, 3, 3}; // The answer is 8
-        
-        int[] arr9 = new int[]{4, 0, 2, 8};
-        int[] arr10 = new int[]{2, 6, 3, 9}; // The answer is 12
-        
-        int[] arr11 = new int[]{5, 4, 8, 5, 9, 12, 9, 3};
-        int[] arr12 = new int[]{2, 9, 4, 1, 8, 2, 1, 2}; // The answer is 27
-        
-        System.out.println("1. Test arrays at with the same road: " + (shortestRoad(arr1, arr2) == 49));
-        System.out.println("2. Test arrays at with the same road: " + (shortestRoad(arr3, arr4) == 17));
-        System.out.println("3. Test arrays at with the same road: " + (shortestRoad(arr5, arr6) == 20));
-        System.out.println("4. Test arrays at with the same road: " + (shortestRoad(arr7, arr8) == 8));
-        System.out.println("5. Test arrays at with the same road: " + (shortestRoad(arr9, arr10) == 12));
-        System.out.println("6. Test arrays at with the same road: " + (shortestRoad(arr11, arr12) == 27));
-    }
-    
+   
     public static int shortestRoad (int [] road1, int [] road2)
     {
         
@@ -106,5 +78,43 @@ public class First
             }
         }
         return min;
+    }
+    
+    public static int missingValue (int [] arr)
+    {
+        //Finding the missing number in an array of 2
+        if(arr.length == 2)
+        {
+            return ((arr[0] + arr[1]) / 2);
+        }
+        
+        //Finding the difference of the invoice series
+        int diff;
+        if((arr[1] - arr[0]) < (arr[2] - arr[1]))
+        {
+            diff = arr[1] - arr[0];
+        }
+        else
+        {
+            diff = arr[2] - arr[1];
+        }
+        
+        //Finding the missing number using the Binary Search method
+        int min = 0;
+        int max = arr.length - 1;
+        int temp = (max + min) / 2;
+        while(max != min + 1)
+        {
+            temp = (max + min) / 2;
+            if((max - temp) * diff == arr[max] - arr[temp])
+            {
+                max = temp;
+            }
+            else
+            {
+                min = temp;
+            }
+        }
+        return ((arr[min] + arr[max]) / 2);
     }
 }
